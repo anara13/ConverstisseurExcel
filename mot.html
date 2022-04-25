@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<html>
+    <head>
+        <script src="motScript.js"></script>
+    </head>
+    <body>
+        <h1> 
+            Mot n° :
+        </h1>
+        <div>
+            <form name="formulaire" action="index.html" onsubmit="" method="POST">
+
+                <!--Marquer le mot pour y revenir plus tard ou le mettre en évidence-->
+                <label for="marquage">Marquer ce mot ?</label>
+                <input type="checkbox" id="marque" name="marquage" value="marque"><br/><br/>
+
+                <!--Boutons radios permettant de savoir si on affiche le formualaire entier ou juste le champ Correction-->
+                <label for="orthographe">Ce mot est-il correctement orthographié ? </label><br/><br/>
+                <input type="radio" id="Oui" name="orthographe" value="oui" onclick="verficationOrthographe()"> Oui
+                <input type="radio" id="Non" name="orthographe" value="non" onclick="verficationOrthographe()"> Non<br/><br/>
+
+                <!--Formulaire complet-->
+                <div id="formComplet" style="display: none">
+                    Tag: <br/> <br/> <input type="text" name="Tag"><br/><br/> 
+                    Lemme: <br/> <br/> <input type="text" name="Lemme"><br/><br/>
+                    Post-Traitement: <br/> <br/> <input type="text" name="Post-Traitement"><br/> <br/> 
+                    Mots similaires existants dans notre dictionnaire: <br/> <br/> <input type="text" name="MotSim"><br/> <br/> 
+                    Commentaire: <br/> <br/> <textarea name="Commentaire"></textarea><br/> <br/> 
+                </div> 
+
+                <!--Champ correction-->
+                <div id="correction" style="display: none">
+                    Correction: <input type="text" name="Correction" id="formCorrection"><br/>
+                </div>
+
+                <!--Bouton validation-->
+                <div id="formValidation" style="display: none">
+                    <br/><input type="submit" value="Envoyer">
+                </div>
+
+            </form>
+        </div>
+    </body>
+</html>
